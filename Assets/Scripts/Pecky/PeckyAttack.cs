@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class PeckyAttack : MonoBehaviour
 {
+    [HideInInspector]
+    public bool isAttacking = false;
 
     Animator animator;
+
     // Use this for initialization
     void Start()
     {
@@ -24,10 +27,24 @@ public class PeckyAttack : MonoBehaviour
         {
             Debug.Log("Pecky Strikes!"); //TODO: Implement actual attack functionality
             animator.SetBool("isAttacking", true);
+            isAttacking = true;
         }
         else
         {
             animator.SetBool("isAttacking", false);
+            isAttacking = true;
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag.Equals("chest"))
+        {
+            ChestController chestController = collision.gameObject.GetComponent<ChestController>();
+            if (!chestController.isOpen)
+            {
+                chestController.openChest();
+            }
         }
     }
 }

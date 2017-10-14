@@ -6,6 +6,7 @@ TagManager:
   tags:
   - pecky
   - menuMusic
+  - chest
   layers:
   - Default
   - TransparentFX
