@@ -71,9 +71,9 @@ public class PeckyMovement : MonoBehaviour
             transform.localScale = scale;
         }
 
-        Vector2 pos = transform.localPosition;
+        Vector3 pos = transform.position;
         pos.x += x*playerSpeed;
-        transform.localPosition = pos;
+        transform.position = pos;
     }
 
     /*public void alignWithCamera()
