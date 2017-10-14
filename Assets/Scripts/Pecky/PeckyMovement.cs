@@ -13,11 +13,13 @@ public class PeckyMovement : MonoBehaviour
     public GameObject groundCheckerRight;
 
     Rigidbody2D rb2d;
+    Animator animator;
 
     // Use this for initialization
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
 //        alignWithCamera();
     }
 
@@ -32,19 +34,34 @@ public class PeckyMovement : MonoBehaviour
     {
         RaycastHit2D raycastHit2DLeft = Physics2D.Raycast(groundCheckerLeft.transform.position, Vector2.down, 0);
         RaycastHit2D raycastHit2DRight = Physics2D.Raycast(groundCheckerRight.transform.position, Vector2.down, 0);
-        
-        if (raycastHit2DLeft.rigidbody!=null || raycastHit2DRight.rigidbody!=null)
+
+        if (raycastHit2DLeft.rigidbody != null || raycastHit2DRight.rigidbody != null)
         {
+            animator.SetBool("isJumping", false);
             if (Input.GetButtonDown("Jump"))
             {
-                rb2d.AddForce(Vector2.up * jumpForce);
+                rb2d.AddForce(Vector2.up*jumpForce);
             }
+        }
+        else
+        {
+            Debug.Log("Jumping...");
+            animator.SetBool("isJumping", true);
         }
     }
 
     void updateMovement()
     {
         float x = Input.GetAxis("Horizontal");
+
+        if (x == 0)
+        {
+            animator.SetBool("isWalking", false);
+        }
+        else
+        {
+            animator.SetBool("isWalking", true);
+        }
 
         if ((x < 0 && facingRight) || (x > 0 && !facingRight))
         {
@@ -55,7 +72,7 @@ public class PeckyMovement : MonoBehaviour
         }
 
         Vector2 pos = transform.localPosition;
-        pos.x += x * playerSpeed;
+        pos.x += x*playerSpeed;
         transform.localPosition = pos;
     }
 
