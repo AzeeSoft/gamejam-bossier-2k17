@@ -9,7 +9,8 @@ public class PeckyMovement : MonoBehaviour
 //    public float camOffset;
     public bool facingRight;
 
-    public GameObject groundChecker;
+    public GameObject groundCheckerLeft;
+    public GameObject groundCheckerRight;
 
     Rigidbody2D rb2d;
 
@@ -29,9 +30,10 @@ public class PeckyMovement : MonoBehaviour
 
     void checkJump()
     {
-        RaycastHit2D raycastHit2D = Physics2D.Raycast(groundChecker.transform.position, Vector2.down, 0);
+        RaycastHit2D raycastHit2DLeft = Physics2D.Raycast(groundCheckerLeft.transform.position, Vector2.down, 0);
+        RaycastHit2D raycastHit2DRight = Physics2D.Raycast(groundCheckerRight.transform.position, Vector2.down, 0);
         
-        if (raycastHit2D.rigidbody!=null)
+        if (raycastHit2DLeft.rigidbody!=null || raycastHit2DRight.rigidbody!=null)
         {
             if (Input.GetButtonDown("Jump"))
             {
