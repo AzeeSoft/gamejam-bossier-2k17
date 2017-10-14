@@ -11,12 +11,26 @@ public class LifeCountHud : MonoBehaviour {
     public LifeCountHud()
     {
         numberLives = 3;
-        lifeValue = GetComponent<Text>();
-        lifeValue.text = "" + numberLives + " X";
+        lifeValue = this.GetComponent<Text>();
+    }
+
+    public void setNumberLives(int i)
+    {
+        numberLives = i;
+    }
+
+    public int getNumberLives()
+    {
+        return numberLives;
+    }
+
+    public void setLifeValue()
+    {
+        lifeValue.text = "   X"+ "   " + numberLives;
     }
 
 	// Update is called once per frame
 	void Update () {
-		
+        setLifeValue();
 	}
 }
