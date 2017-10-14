@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Sprites/Aligator/AligatorAttack1-256.png.meta
+guid: f33652c1a6d97294f944e290c3ad7424
+timeCreated: 1508010333
+=======
 guid: 6ea2aec65b8abe04dbec18db810da4f3
 timeCreated: 1508010886
+>>>>>>> 2d608431c6345f70dbda0bf178289477f68136ee:Assets/Sprites/Aligator/AligatorAttack1-256.png.meta
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName: {}

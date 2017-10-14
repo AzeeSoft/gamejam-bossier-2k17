@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Sprites/Aligator/AligatorIdle-256.png.meta
+guid: a8462a251e22741439105f91709c0699
+timeCreated: 1508010333
+=======
 guid: 7d9070bd47f5c464ab2a25a57e6d7555
 timeCreated: 1508010886
+>>>>>>> 2d608431c6345f70dbda0bf178289477f68136ee:Assets/Sprites/Aligator/AligatorIdle-256.png.meta
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName: {}
