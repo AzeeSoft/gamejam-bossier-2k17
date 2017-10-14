@@ -1,12 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< HEAD:Assets/Sprites/Aligator/AligatorWalk1-256.png.meta
 guid: ab8cd31218c76364391b6e2213c24c85
-timeCreated: 1508010333
-=======
-guid: 68ed05c481caab84fb96ed347c3d6fc0
-timeCreated: 1508010886
->>>>>>> 2d608431c6345f70dbda0bf178289477f68136ee:Assets/Sprites/Aligator/AligatorWalk1-256.png.meta
-licenseType: Free
 TextureImporter:
   fileIDToRecycleName: {}
   externalObjects: {}
@@ -41,7 +34,7 @@ TextureImporter:
     mipBias: -1
     wrapU: 1
     wrapV: 1
-    wrapW: 1
+    wrapW: -1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50

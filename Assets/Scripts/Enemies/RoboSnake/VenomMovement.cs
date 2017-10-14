@@ -2,32 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RoboSnakeMovement : MonoBehaviour
+public class VenomMovement : MonoBehaviour
 {
     public float speed;
 
-    bool isFacingLeft;
-
-    Animator animator;
-
 	// Use this for initialization
-	void Start ()
-	{
-	    animator = GetComponent<Animator>();
+	void Start () {
+		
 	}
 	
 	// Update is called once per frame
-	void Update ()
-    {
-		updateMovement();
-	}
-
-    void updateMovement()
-    {
+	void Update () {
         Vector2 pos = transform.position;
         pos.x += speed;
         transform.position = pos;
-
-        animator.SetBool("isWalking", true);
     }
 }
