@@ -28,7 +28,7 @@ public class PeckyMovement : MonoBehaviour
     {
         if (Input.GetButtonDown("Jump"))
         {
-            rb2d.AddForce(Vector2.up*jumpForce);
+            rb2d.AddForce(Vector2.up * jumpForce);
         }
     }
 
