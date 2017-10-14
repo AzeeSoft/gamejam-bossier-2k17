@@ -11,6 +11,21 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 1664639773564260}
   m_IsPrefabParent: 1
+--- !u!1 &1293276721770208
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4771973738091268}
+  m_Layer: 0
+  m_Name: pecky_ground_checker
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1664639773564260
 GameObject:
   m_ObjectHideFlags: 0
@@ -22,9 +37,11 @@ GameObject:
   - component: {fileID: 212035911058092502}
   - component: {fileID: 50094205333541158}
   - component: {fileID: 61213896300495062}
+  - component: {fileID: 114027990420572578}
+  - component: {fileID: 114476693361408440}
   m_Layer: 0
-  m_Name: pecky_template
-  m_TagString: Untagged
+  m_Name: Pecky
+  m_TagString: pecky
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -36,10 +53,24 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1664639773564260}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.9, y: -1.61, z: 0}
+  m_LocalPosition: {x: -10.31, y: -1.79, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4771973738091268}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4771973738091268
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1293276721770208}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -1.305, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 4096301159137992}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &50094205333541158
@@ -56,7 +87,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 1.3
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -87,6 +118,32 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.5647907, y: 2.56}
   m_EdgeRadius: 0
+--- !u!114 &114027990420572578
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1664639773564260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a96c8a6478edc044a8659ff5ccc45e1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerSpeed: 0.1
+  jumpForce: 375
+  facingRight: 1
+  groundChecker: {fileID: 1293276721770208}
+--- !u!114 &114476693361408440
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1664639773564260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62fda4289baee154a925ef5c12e75d6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212035911058092502
 SpriteRenderer:
   m_ObjectHideFlags: 1

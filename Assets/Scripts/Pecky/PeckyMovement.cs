@@ -6,8 +6,10 @@ public class PeckyMovement : MonoBehaviour
 {
     public float playerSpeed;
     public float jumpForce;
+//    public float camOffset;
+    public bool facingRight;
 
-    public bool facingRight = true;
+    public GameObject groundChecker;
 
     Rigidbody2D rb2d;
 
@@ -15,20 +17,26 @@ public class PeckyMovement : MonoBehaviour
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
+//        alignWithCamera();
     }
 
     // Update is called once per frame
     void Update()
     {
-        checkForJump();
+        checkJump();
         updateMovement();
     }
 
-    void checkForJump()
+    void checkJump()
     {
-        if (Input.GetButtonDown("Jump"))
+        RaycastHit2D raycastHit2D = Physics2D.Raycast(groundChecker.transform.position, Vector2.down, 0);
+        
+        if (raycastHit2D.rigidbody!=null)
         {
-            rb2d.AddForce(Vector2.up * jumpForce);
+            if (Input.GetButtonDown("Jump"))
+            {
+                rb2d.AddForce(Vector2.up * jumpForce);
+            }
         }
     }
 
@@ -39,13 +47,22 @@ public class PeckyMovement : MonoBehaviour
         if ((x < 0 && facingRight) || (x > 0 && !facingRight))
         {
             facingRight = !facingRight;
-            Vector3 scale = StaticTools.CloneVector3(transform.localScale);
+            Vector2 scale = transform.localScale;
             scale.x *= -1;
             transform.localScale = scale;
         }
 
-        Vector3 pos = StaticTools.CloneVector3(transform.localPosition);
+        Vector2 pos = transform.localPosition;
         pos.x += x * playerSpeed;
         transform.localPosition = pos;
     }
+
+    /*public void alignWithCamera()
+    {
+        Vector2 camBottomLeft = Camera.main.ViewportToWorldPoint(new Vector3(0, 0));
+//        Debug.Log("Camera Rect: "+ camBottomLeft);
+        Vector2 pos = transform.position;
+        pos.x = camBottomLeft.x + camOffset;
+        transform.localPosition = pos;
+    }*/
 }
