@@ -30,9 +30,12 @@ public class CameraMovement : MonoBehaviour
 
     void updatePosition()
     {
-        Vector3 pos = transform.position;
-        pos.x = pecky.transform.position.x + initOffset;
-        transform.position = pos;
+        if (pecky != null)
+        {
+            Vector3 pos = transform.position;
+            pos.x = pecky.transform.position.x + initOffset;
+            transform.position = pos;
+        }
     }
 
     void alignWithPlayer()
