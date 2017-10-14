@@ -11,3 +11,4 @@ GameJam Bossier.csproj
 .vs/GameJam Bossier/v14/.suo
 >>>>>>> bd616bb85ab515de7c00d8733161f02b35a6f043
 build/
+*.meta
