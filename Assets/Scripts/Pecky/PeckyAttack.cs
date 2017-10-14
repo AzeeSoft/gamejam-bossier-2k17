@@ -6,6 +6,8 @@ public class PeckyAttack : MonoBehaviour
 {
 
     Animator animator;
+    GameObject overlappingAttackableObject;
+
     // Use this for initialization
     void Start()
     {
@@ -24,10 +26,37 @@ public class PeckyAttack : MonoBehaviour
         {
             Debug.Log("Pecky Strikes!"); //TODO: Implement actual attack functionality
             animator.SetBool("isAttacking", true);
+            attackOverlappingObject();
         }
         else
         {
             animator.SetBool("isAttacking", false);
         }
     }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag.Equals("chest"))
+        {
+            overlappingAttackableObject = collision.gameObject;
+            /*ChestController chestController = collision.gameObject.GetComponent<ChestController>();
+            if (!chestController.isOpen && isAttacking)
+            {
+                chestController.openChest();
+            }*/
+        }
+    }
+
+    void attackOverlappingObject()
+    {
+        if (overlappingAttackableObject == null)
+            return;
+
+        if (overlappingAttackableObject.tag.Equals("chest"))
+        {
+            ChestController chestController = overlappingAttackableObject.GetComponent<ChestController>();
+            chestController.openChest();
+        }
+    }
+
 }
