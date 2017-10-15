@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SplashThing : MonoBehaviour {
 
-    public float delayTime = 5;
+    public float delayTime = 2;
     IEnumerator Start()
     {
         yield return new WaitForSeconds(delayTime);
