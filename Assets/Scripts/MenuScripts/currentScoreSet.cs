@@ -8,7 +8,7 @@ public class currentScoreSet : MonoBehaviour {
     private int score;
     private Text scoreLabel;
 
-    public currentScoreSet()
+    public void Start()
     {
         score = 0;
         scoreLabel = this.GetComponent<Text>();

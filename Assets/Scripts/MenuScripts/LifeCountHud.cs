@@ -8,7 +8,7 @@ public class LifeCountHud : MonoBehaviour {
     private int numberLives;
     private Text lifeValue;
 
-    public LifeCountHud()
+    public void Start()
     {
         numberLives = 3;
         lifeValue = this.GetComponent<Text>();
