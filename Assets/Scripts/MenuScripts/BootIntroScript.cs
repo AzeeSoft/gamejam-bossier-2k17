@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class BootIntroScript : MonoBehaviour {
-    public float delayTime = 5.76f;
+    public float delayTime = 0.673f;
     public Canvas BootCanvas;
     public GameObject BootTextPrefab;
     private GameObject BootTextObject;
