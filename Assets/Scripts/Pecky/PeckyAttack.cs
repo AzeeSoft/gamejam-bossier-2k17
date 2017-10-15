@@ -91,6 +91,12 @@ public class PeckyAttack : MonoBehaviour
                 collision.gameObject.transform.GetComponentInParent<AligatorController>();
             aligatorController.die();
         }
+        else if (collision.gameObject.CompareTag("CrowCrushDetector"))
+        {
+            CrowController crowController =
+                collision.gameObject.transform.GetComponentInParent<CrowController>();
+            crowController.die();
+        }
     }
 
     void attackOverlappingObject()

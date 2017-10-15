@@ -12,6 +12,8 @@ TagManager:
   - RoboSnakeCrushDetector
   - AligatorCrushDetector
   - Aligator
+  - Crow
+  - CrowCrushDetector
   layers:
   - Default
   - TransparentFX
