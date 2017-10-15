@@ -461,7 +461,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5ae63d3978e2b9488a2e4cc057cf692, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delayTime: 5.76
+  delayTime: 0.673
   BootCanvas: {fileID: 606608175}
   BootTextPrefab: {fileID: 1441631747}
 --- !u!114 &606608178

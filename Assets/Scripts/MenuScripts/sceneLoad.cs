@@ -8,7 +8,7 @@ public class sceneLoad : MonoBehaviour {
     public void LoadScene(int level)
     {
         sound= GameObject.FindGameObjectsWithTag("menuMusic");
-        if (level == 3)
+        if (level == 5)
             sound[0].SetActive(false);
         Application.LoadLevel(level);
     }
