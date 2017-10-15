@@ -8,6 +8,6 @@ public class SplashThing : MonoBehaviour {
     IEnumerator Start()
     {
         yield return new WaitForSeconds(delayTime);
-        Application.LoadLevel(1);
+        Application.LoadLevel(2);
     }
 }
