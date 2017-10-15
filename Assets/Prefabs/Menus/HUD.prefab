@@ -124,7 +124,7 @@ GameObject:
   - component: {fileID: 114700322384596904}
   - component: {fileID: 114868300614583526}
   m_Layer: 5
-  m_Name: Text
+  m_Name: scoreText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -250,7 +250,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 00000
+  m_Text: '0
+
+'
 --- !u!114 &114547924262094288
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -316,7 +318,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 00000
+  m_Text: '0
+
+'
 --- !u!114 &114759294224458778
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -546,7 +550,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -212, y: 269.95}
+  m_AnchoredPosition: {x: -211.99998, y: 269.95}
   m_SizeDelta: {x: 109.1, y: 36.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224330583395319036
@@ -582,7 +586,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -212, y: 236.65002}
+  m_AnchoredPosition: {x: -211.99998, y: 236.65002}
   m_SizeDelta: {x: 109.1, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224524218308138184

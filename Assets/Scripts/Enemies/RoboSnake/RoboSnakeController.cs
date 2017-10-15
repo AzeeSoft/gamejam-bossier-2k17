@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class RoboSnakeController : MonoBehaviour
 {
+    public int points = 10;
+
     // Use this for initialization
     void Start()
     {
