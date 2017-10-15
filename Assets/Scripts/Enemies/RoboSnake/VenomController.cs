@@ -20,6 +20,11 @@ public class VenomController : MonoBehaviour {
         {
             PeckyController peckyController = collider.gameObject.GetComponent<PeckyController>();
             peckyController.die();
+            Destroy(gameObject);
+        }
+        if (collider.gameObject.CompareTag("bounder"))
+        {
+            Destroy(gameObject);
         }
     }
 }

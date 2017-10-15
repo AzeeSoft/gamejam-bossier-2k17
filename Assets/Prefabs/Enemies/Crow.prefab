@@ -122,7 +122,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!61 &61098439753763088
 BoxCollider2D:
@@ -196,6 +196,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55f4f879c6753b34abac8e4231e228f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  eggSpawner: {fileID: 4908919177535376}
+  eggPrefab: {fileID: 1883387545557944, guid: 7ddbbf32f4a227c40a9a88bee0bcc4a9, type: 2}
+  eggDropInterval: 3
 --- !u!114 &114707324158667420
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class AligatorController : MonoBehaviour
 {
+    public int points = 5;
+
     // Use this for initialization
     void Start()
     {
