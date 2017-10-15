@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PeckyAttack : MonoBehaviour
 {
+    public GameObject groundCheckerLeft;
+    public GameObject groundCheckerRight;
 
     Animator animator;
     GameObject overlappingAttackableObject;
@@ -18,6 +20,7 @@ public class PeckyAttack : MonoBehaviour
     void Update()
     {
         checkAttack();
+//        checkCrush();
     }
 
     void checkAttack()
@@ -34,6 +37,42 @@ public class PeckyAttack : MonoBehaviour
         }
     }
 
+    /*void checkCrush()
+    {
+        RaycastHit2D raycastHit2DLeft = Physics2D.Raycast(groundCheckerLeft.transform.position, Vector2.down, 0);
+        RaycastHit2D raycastHit2DRight = Physics2D.Raycast(groundCheckerRight.transform.position, Vector2.down, 0);
+
+        GameObject crushableGameObjectLeft = null;
+        GameObject crushableGameObjectRight = null;
+        if (raycastHit2DLeft.rigidbody != null)
+        {
+            crushableGameObjectLeft = raycastHit2DLeft.rigidbody.gameObject; 
+        }
+        if (raycastHit2DRight.rigidbody != null)
+        {
+            crushableGameObjectRight = raycastHit2DLeft.rigidbody.gameObject;
+            if (crushableGameObjectRight == crushableGameObjectRight)
+            {
+                crushableGameObjectRight = null;
+            }
+        }
+
+        crushObject(crushableGameObjectLeft);
+        crushObject(crushableGameObjectRight);
+    }*/
+
+    /*void crushObject(GameObject crushableGameObject)
+    {
+        if (crushableGameObject != null)
+        {
+            if (crushableGameObject.CompareTag("RoboSnake"))
+            {
+                RoboSnakeController roboSnakeController = crushableGameObject.GetComponent<RoboSnakeController>();
+                roboSnakeController.die();
+            }
+        }
+    }*/
+
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag.Equals("chest"))
@@ -44,6 +83,13 @@ public class PeckyAttack : MonoBehaviour
             {
                 chestController.openChest();
             }*/
+        }
+
+        if (collision.gameObject.CompareTag("RoboSnakeCrushDetector"))
+        {
+            RoboSnakeController roboSnakeController =
+                collision.gameObject.transform.GetComponentInParent<RoboSnakeController>();
+            roboSnakeController.die();
         }
     }
 

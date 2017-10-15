@@ -21,4 +21,9 @@ public class RoboSnakeController : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    public void die()
+    {
+        Destroy(gameObject);
+    }
 }

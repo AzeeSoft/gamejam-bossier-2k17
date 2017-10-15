@@ -9,6 +9,7 @@ TagManager:
   - chest
   - RoboSnake
   - bounder
+  - RoboSnakeCrushDetector
   layers:
   - Default
   - TransparentFX

@@ -713,15 +713,34 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 114728445526529836, guid: 39225dc313acf5d429fe7952cc7ff124,
-        type: 2}
-      propertyPath: speed
-      value: -0.07
+    - target: {fileID: 1326818086829018, guid: 39225dc313acf5d429fe7952cc7ff124, type: 2}
+      propertyPath: m_TagString
+      value: RoboSnakeCrushDetector
       objectReference: {fileID: 0}
-    - target: {fileID: 114233926635634734, guid: 39225dc313acf5d429fe7952cc7ff124,
+    - target: {fileID: 61630843356143162, guid: 39225dc313acf5d429fe7952cc7ff124,
         type: 2}
-      propertyPath: spitInterval
-      value: 2.5
+      propertyPath: m_Offset.x
+      value: 0.13726377
+      objectReference: {fileID: 0}
+    - target: {fileID: 61630843356143162, guid: 39225dc313acf5d429fe7952cc7ff124,
+        type: 2}
+      propertyPath: m_Size.x
+      value: 0.9614229
+      objectReference: {fileID: 0}
+    - target: {fileID: 61630843356143162, guid: 39225dc313acf5d429fe7952cc7ff124,
+        type: 2}
+      propertyPath: m_Offset.y
+      value: -0.1467675
+      objectReference: {fileID: 0}
+    - target: {fileID: 61630843356143162, guid: 39225dc313acf5d429fe7952cc7ff124,
+        type: 2}
+      propertyPath: m_Size.y
+      value: 0.18462634
+      objectReference: {fileID: 0}
+    - target: {fileID: 61630843356143162, guid: 39225dc313acf5d429fe7952cc7ff124,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 39225dc313acf5d429fe7952cc7ff124, type: 2}
@@ -842,6 +861,16 @@ Prefab:
       propertyPath: m_AngularDrag
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 114476693361408440, guid: 5124cee1388aae9469790dc88cefa279,
+        type: 2}
+      propertyPath: groundCheckerLeft
+      value: 
+      objectReference: {fileID: 6037891}
+    - target: {fileID: 114476693361408440, guid: 5124cee1388aae9469790dc88cefa279,
+        type: 2}
+      propertyPath: groundCheckerRight
+      value: 
+      objectReference: {fileID: 2138890913}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5124cee1388aae9469790dc88cefa279, type: 2}
   m_IsPrefabParent: 0

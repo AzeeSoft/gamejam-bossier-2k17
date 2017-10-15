@@ -45,7 +45,7 @@ public class PeckyMovement : MonoBehaviour
         }
         else
         {
-            Debug.Log("Jumping...");
+//            Debug.Log("Jumping...");
             animator.SetBool("isJumping", true);
         }
     }
