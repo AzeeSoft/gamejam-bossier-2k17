@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class MainSceneManager : MonoBehaviour
 {
     public Text scoreText;
+    public Text highscoreText;
     public Text livesText;
     public GameObject scoreNotification;
 
@@ -38,8 +39,10 @@ public class MainSceneManager : MonoBehaviour
     void Start()
     {
         Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Enemy"), LayerMask.NameToLayer("Enemy"), true);
+        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("PlayerSafe"), true);
         updateCurrentScore();
         updateLives();
+        updateHighScore();
     }
 
     // Update is called once per frame
@@ -103,6 +106,17 @@ public class MainSceneManager : MonoBehaviour
         }
     }
 
+    public void setHighScore(int highScore)
+    {
+        highscoreText.text = highScore.ToString();
+    }
+
+    public void updateHighScore()
+    {
+        int highscore = PlayerPrefs.GetInt("highscore", 0);
+        setHighScore(highscore);
+    }
+
     public void updateCurrentScore()
     {
         Debug.Log("Current Score: " + scoreText.text);
@@ -143,6 +157,21 @@ public class MainSceneManager : MonoBehaviour
     {
         Time.timeScale = 0;
         gameOverScoreText.text = "Your Score: " + currentScore;
+
+        int highscore = PlayerPrefs.GetInt("highscore", 0);
+
+        if (currentScore > highscore)
+        {
+            PlayerPrefs.SetInt("highscore", currentScore);
+            PlayerPrefs.Save();
+        }
+
         gameOverLayout.SetActive(true);
+    }
+
+    public void victory()
+    {
+        Time.timeScale = 0;
+
     }
 }

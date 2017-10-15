@@ -17,6 +17,7 @@ TagManager:
   - Ground
   - MainSceneManager
   - RockPit
+  - VictoryEnd
   layers:
   - Default
   - TransparentFX
@@ -28,8 +29,8 @@ TagManager:
   - 
   - Ground
   - Enemy
-  - 
-  - 
+  - PlayerSafe
+  - Player
   - 
   - 
   - 

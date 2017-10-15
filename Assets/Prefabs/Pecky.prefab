@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 114476693361408440}
   - component: {fileID: 95931163527726100}
   - component: {fileID: 114813047603421910}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Pecky
   m_TagString: pecky
   m_Icon: {fileID: 0}
@@ -70,7 +70,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1664639773564260}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.66, y: -1.795, z: 0}
+  m_LocalPosition: {x: 90.55, y: 1.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4685712915493328}

@@ -76,4 +76,13 @@ public class PeckyController : MonoBehaviour
 
         canDie = true;
     }
+
+    void OnTriggerEnter2D(Collider2D collider)
+    {
+        if (collider.gameObject.CompareTag("pecky"))
+        {
+            MainSceneManager mainSceneManager = MainSceneManager.getMainSceneManager();
+            mainSceneManager.victory();
+        }
+    }
 }
