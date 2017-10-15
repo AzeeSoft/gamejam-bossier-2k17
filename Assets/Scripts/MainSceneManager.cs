@@ -190,6 +190,7 @@ public class MainSceneManager : MonoBehaviour
         {
             PlayerPrefs.SetInt("highscore", currentScore);
             PlayerPrefs.Save();
+            highscore = currentScore;
         }
         gameOverHighScoreText.text = "High Score: " + highscore;
 
@@ -210,6 +211,7 @@ public class MainSceneManager : MonoBehaviour
         {
             PlayerPrefs.SetInt("highscore", currentScore);
             PlayerPrefs.Save();
+            highscore = currentScore;
         }
 
         victoryHighscoreText.text = highscore.ToString();

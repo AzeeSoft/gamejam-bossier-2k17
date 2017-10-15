@@ -7,6 +7,8 @@ public class PeckyAttack : MonoBehaviour
     public GameObject groundCheckerLeft;
     public GameObject groundCheckerRight;
 
+    public float bounceForce;
+
     Animator animator;
     GameObject overlappingAttackableObject;
 
@@ -73,6 +75,12 @@ public class PeckyAttack : MonoBehaviour
         }
     }*/
 
+    void bounce()
+    {
+        Rigidbody2D rb2d = GetComponent<Rigidbody2D>();
+        rb2d.AddForce(Vector2.up * bounceForce);
+    }
+
     void OnTriggerEnter2D(Collider2D collision)
     {
         MainSceneManager mainSceneManager = MainSceneManager.getMainSceneManager();
@@ -88,6 +96,7 @@ public class PeckyAttack : MonoBehaviour
             roboSnakeController.die();
             mainSceneManager.addCurrentScore(roboSnakeController.points);
             audioSource.Play();
+            bounce();
         }
         else if (collision.gameObject.CompareTag("AligatorCrushDetector"))
         {
@@ -96,6 +105,7 @@ public class PeckyAttack : MonoBehaviour
             aligatorController.die();
             mainSceneManager.addCurrentScore(aligatorController.points);
             audioSource.Play();
+            bounce();
         }
         else if (collision.gameObject.CompareTag("CrowCrushDetector"))
         {
@@ -104,6 +114,7 @@ public class PeckyAttack : MonoBehaviour
             crowController.die();
             mainSceneManager.addCurrentScore(crowController.points);
             audioSource.Play();
+            bounce();
         }
     }
 

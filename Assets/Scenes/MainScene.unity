@@ -941,7 +941,7 @@ MonoBehaviour:
   victoryLayout: {fileID: 1877147197}
   gameOverScoreText: {fileID: 1552182010}
   gameOverHighScoreText: {fileID: 2140539469}
-  maxLives: 3
+  maxLives: 5
   totalTime: 300
 --- !u!1 &274527452
 GameObject:
@@ -3582,6 +3582,16 @@ Prefab:
       propertyPath: m_Name
       value: Dirt (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 61135703907976542, guid: f1994d738c01b364780b585e0616d67b,
+        type: 2}
+      propertyPath: m_Offset.x
+      value: -0.01772213
+      objectReference: {fileID: 0}
+    - target: {fileID: 61135703907976542, guid: f1994d738c01b364780b585e0616d67b,
+        type: 2}
+      propertyPath: m_Size.x
+      value: 9.442217
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f1994d738c01b364780b585e0616d67b, type: 2}
   m_IsPrefabParent: 0
@@ -4080,7 +4090,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 25, y: 45}
-  m_SizeDelta: {x: 161.3, y: 25.7}
+  m_SizeDelta: {x: 198.3, y: 31.596}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &872612381
 MonoBehaviour:
@@ -4104,7 +4114,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: e96df0f62a86d4342bf8e0953c8e40e9, type: 3}
-    m_FontSize: 25
+    m_FontSize: 26
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
@@ -5073,6 +5083,11 @@ Prefab:
     - target: {fileID: 4096301159137992, guid: 5124cee1388aae9469790dc88cefa279, type: 2}
       propertyPath: m_RootOrder
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114476693361408440, guid: 5124cee1388aae9469790dc88cefa279,
+        type: 2}
+      propertyPath: bounceForce
+      value: 700
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5124cee1388aae9469790dc88cefa279, type: 2}
@@ -9608,6 +9623,7 @@ GameObject:
   - component: {fileID: 1877147198}
   - component: {fileID: 1877147200}
   - component: {fileID: 1877147199}
+  - component: {fileID: 1877147201}
   m_Layer: 5
   m_Name: VictoryWrapper
   m_TagString: Untagged
@@ -9676,6 +9692,13 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1877147197}
+--- !u!81 &1877147201
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1877147197}
+  m_Enabled: 1
 --- !u!1001 &1878023453
 Prefab:
   m_ObjectHideFlags: 0
