@@ -6,7 +6,7 @@ public class AligatorMovement : MonoBehaviour
 {
     public float speed;
 
-    bool isFacingLeft;
+    bool isFacingLeft = true;
 
     Animator animator;
 

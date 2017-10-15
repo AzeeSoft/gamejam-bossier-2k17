@@ -75,13 +75,16 @@ public class MainSceneManager : MonoBehaviour
         updateCurrentScore();
     }
 
-    public void addLife()
+    public bool addLife()
     {
         if (playerLives < maxLives)
         {
             playerLives++;
             updateLives();
+            return true;
         }
+
+        return false;
     }
 
     public bool loseLife()
@@ -94,9 +97,7 @@ public class MainSceneManager : MonoBehaviour
         }
         else
         {
-            Time.timeScale = 0;
-            gameOverScoreText.text = "Your Score: " + currentScore;
-            gameOverLayout.SetActive(true);
+            gameOver();
             return false;
         }
     }
@@ -135,5 +136,12 @@ public class MainSceneManager : MonoBehaviour
     {
         pauseMenuLayout.SetActive(false);
         Time.timeScale = 1;
+    }
+
+    public void gameOver()
+    {
+        Time.timeScale = 0;
+        gameOverScoreText.text = "Your Score: " + currentScore;
+        gameOverLayout.SetActive(true);
     }
 }

@@ -9,6 +9,8 @@ public class PeckyMovement : MonoBehaviour
 //    public float camOffset;
     public bool facingRight;
 
+    [HideInInspector] public bool isGrounded = true;
+
     public GameObject groundCheckerLeft;
     public GameObject groundCheckerRight;
 
@@ -42,11 +44,13 @@ public class PeckyMovement : MonoBehaviour
             {
                 rb2d.AddForce(Vector2.up*jumpForce);
             }
+            isGrounded = true;
         }
         else
         {
 //            Debug.Log("Jumping...");
             animator.SetBool("isJumping", true);
+            isGrounded = false;
         }
     }
 

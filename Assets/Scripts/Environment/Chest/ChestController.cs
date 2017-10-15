@@ -36,14 +36,18 @@ public class ChestController : MonoBehaviour
 
     private void revealItem()
     {
-        GameObject item;
+        GameObject item = null;
 
         //For now, juz +1 Life
         MainSceneManager mainSceneManager = MainSceneManager.getMainSceneManager();
-        mainSceneManager.addLife();
-        item = GameObject.Instantiate(lifePrefab, transform.position, transform.rotation);
+        if (mainSceneManager.addLife())
+        {
+            item = GameObject.Instantiate(lifePrefab, transform.position, transform.rotation);
+        }
 
-
-        StartCoroutine(StaticTools.NotifyCollectible(item, 10));
+        if (item != null)
+        {
+            StartCoroutine(StaticTools.NotifyCollectible(item, 10));
+        }
     }
 }
