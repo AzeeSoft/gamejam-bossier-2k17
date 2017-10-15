@@ -78,18 +78,18 @@ public class PeckyAttack : MonoBehaviour
         if (collision.gameObject.tag.Equals("chest"))
         {
             overlappingAttackableObject = collision.gameObject;
-            /*ChestController chestController = collision.gameObject.GetComponent<ChestController>();
-            if (!chestController.isOpen && isAttacking)
-            {
-                chestController.openChest();
-            }*/
         }
-
-        if (collision.gameObject.CompareTag("RoboSnakeCrushDetector"))
+        else if (collision.gameObject.CompareTag("RoboSnakeCrushDetector"))
         {
             RoboSnakeController roboSnakeController =
                 collision.gameObject.transform.GetComponentInParent<RoboSnakeController>();
             roboSnakeController.die();
+        }
+        else if (collision.gameObject.CompareTag("AligatorCrushDetector"))
+        {
+            AligatorController aligatorController =
+                collision.gameObject.transform.GetComponentInParent<AligatorController>();
+            aligatorController.die();
         }
     }
 

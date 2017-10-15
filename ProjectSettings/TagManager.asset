@@ -10,6 +10,8 @@ TagManager:
   - RoboSnake
   - bounder
   - RoboSnakeCrushDetector
+  - AligatorCrushDetector
+  - Aligator
   layers:
   - Default
   - TransparentFX

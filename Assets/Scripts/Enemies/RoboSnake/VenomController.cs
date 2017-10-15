@@ -14,11 +14,11 @@ public class VenomController : MonoBehaviour {
 		
 	}
 
-    void OnCollisionEnter2D(Collision2D collision)
+    void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collision.gameObject.CompareTag("pecky"))
+        if (collider.gameObject.CompareTag("pecky"))
         {
-            PeckyController peckyController = collision.gameObject.GetComponent<PeckyController>();
+            PeckyController peckyController = collider.gameObject.GetComponent<PeckyController>();
             peckyController.die();
         }
     }
