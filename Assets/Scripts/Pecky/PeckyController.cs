@@ -79,7 +79,7 @@ public class PeckyController : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collider.gameObject.CompareTag("pecky"))
+        if (collider.gameObject.CompareTag("VictoryEnd"))
         {
             MainSceneManager mainSceneManager = MainSceneManager.getMainSceneManager();
             mainSceneManager.victory();

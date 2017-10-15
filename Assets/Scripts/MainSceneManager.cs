@@ -8,12 +8,15 @@ using UnityEngine.UI;
 public class MainSceneManager : MonoBehaviour
 {
     public Text scoreText;
+    public Text victoryScoreText;
     public Text highscoreText;
+    public Text victoryHighscoreText;
     public Text livesText;
     public GameObject scoreNotification;
 
     public GameObject pauseMenuLayout;
     public GameObject gameOverLayout;
+    public GameObject victoryLayout;
     public Text gameOverScoreText;
 
     public int maxLives ;
@@ -173,5 +176,18 @@ public class MainSceneManager : MonoBehaviour
     {
         Time.timeScale = 0;
 
+        victoryScoreText.text = currentScore.ToString();
+
+        int highscore = PlayerPrefs.GetInt("highscore", 0);
+
+        if (currentScore > highscore)
+        {
+            PlayerPrefs.SetInt("highscore", currentScore);
+            PlayerPrefs.Save();
+        }
+
+        victoryHighscoreText.text = highscore.ToString();
+
+        victoryLayout.SetActive(true);
     }
 }
