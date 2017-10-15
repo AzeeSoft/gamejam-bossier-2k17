@@ -35,6 +35,13 @@ public class PeckyController : MonoBehaviour
             pos.y = 5;
             transform.position = pos;
 
+            Rigidbody2D rb2d = GetComponent<Rigidbody2D>();
+            Vector3 vel = rb2d.velocity;
+            vel.x = 0;
+            vel.y = 0;
+            vel.z = 0;
+            rb2d.velocity = vel;
+
             StartCoroutine(makeInvincibleTemp());
         }
 //        Destroy(gameObject);

@@ -9,7 +9,7 @@ public class TriggerSpawner : MonoBehaviour {
     bool spawned = false;
 
     // Use this for initialization
-    void Start()
+    void Awake()
     {
         foreach (GameObject enemy in spawnableEnemies)
         {

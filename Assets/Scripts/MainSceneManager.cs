@@ -37,6 +37,7 @@ public class MainSceneManager : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Enemy"), LayerMask.NameToLayer("Enemy"), true);
         updateCurrentScore();
         updateLives();
     }
