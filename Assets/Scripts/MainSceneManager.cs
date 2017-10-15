@@ -12,19 +12,25 @@ public class MainSceneManager : MonoBehaviour
     public Text highscoreText;
     public Text victoryHighscoreText;
     public Text livesText;
+    public Text timerText;
     public GameObject scoreNotification;
 
     public GameObject pauseMenuLayout;
     public GameObject gameOverLayout;
     public GameObject victoryLayout;
     public Text gameOverScoreText;
+    public Text gameOverHighScoreText;
 
-    public int maxLives ;
+    public int maxLives;
+
+    public int totalTime = 5;
 
     int currentScore = 0;
     int playerLives = 1;
 
     bool paused = false;
+
+    float passedSeconds = 0;
 
     static MainSceneManager mainSceneManager = null;
 
@@ -52,6 +58,7 @@ public class MainSceneManager : MonoBehaviour
     void Update()
     {
         checkForPause();
+        updateTimer();
     }
 
     void checkForPause()
@@ -69,12 +76,28 @@ public class MainSceneManager : MonoBehaviour
         }
     }
 
+    void updateTimer()
+    {
+        passedSeconds += Time.deltaTime;
+        float timeRemaining = totalTime - passedSeconds;
+        int h = (int) (timeRemaining/60);
+        int s = (int) (timeRemaining%60);
+
+        timerText.text = h + ":" + s;
+
+        if (timeRemaining <= 0)
+        {
+            gameOver();
+        }
+    }
+
     public void addCurrentScore(int a)
     {
         currentScore += a;
         GameObject pecky = GameObject.FindGameObjectWithTag("pecky");
 
-        GameObject scoreNotif = GameObject.Instantiate(scoreNotification, pecky.transform.position, pecky.transform.rotation);
+        GameObject scoreNotif = GameObject.Instantiate(scoreNotification, pecky.transform.position,
+            pecky.transform.rotation);
         TextMesh textmesh = scoreNotif.GetComponent<TextMesh>();
         textmesh.text = a.ToString();
 
@@ -168,6 +191,7 @@ public class MainSceneManager : MonoBehaviour
             PlayerPrefs.SetInt("highscore", currentScore);
             PlayerPrefs.Save();
         }
+        gameOverHighScoreText.text = "High Score: " + highscore;
 
         gameOverLayout.SetActive(true);
     }
@@ -175,6 +199,8 @@ public class MainSceneManager : MonoBehaviour
     public void victory()
     {
         Time.timeScale = 0;
+
+        currentScore += (int)(totalTime - passedSeconds);
 
         victoryScoreText.text = currentScore.ToString();
 
