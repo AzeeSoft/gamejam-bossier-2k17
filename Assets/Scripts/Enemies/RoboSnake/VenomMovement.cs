@@ -14,7 +14,7 @@ public class VenomMovement : MonoBehaviour
 	// Update is called once per frame
 	void Update () {
         Vector2 pos = transform.position;
-        pos.x += speed;
+        pos.x += speed * Time.deltaTime;
         transform.position = pos;
     }
 }

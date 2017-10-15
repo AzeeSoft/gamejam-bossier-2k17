@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4771973738091268}
   m_Layer: 0
-  m_Name: pecky_ground_checker (1)
+  m_Name: pecky_ground_checker_right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -39,6 +39,8 @@ GameObject:
   - component: {fileID: 61213896300495062}
   - component: {fileID: 114027990420572578}
   - component: {fileID: 114476693361408440}
+  - component: {fileID: 95931163527726100}
+  - component: {fileID: 114813047603421910}
   m_Layer: 0
   m_Name: Pecky
   m_TagString: pecky
@@ -55,7 +57,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4685712915493328}
   m_Layer: 0
-  m_Name: pecky_ground_checker
+  m_Name: pecky_ground_checker_left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -68,7 +70,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1664639773564260}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.66, y: -1.79, z: 0}
+  m_LocalPosition: {x: -8.66, y: -1.795, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4685712915493328}
@@ -83,7 +85,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1976039493202640}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.713, y: -1.305, z: 0}
+  m_LocalPosition: {x: -0.402, y: -1.295, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4096301159137992}
@@ -96,7 +98,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1293276721770208}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.79, y: -1.3049998, z: 0}
+  m_LocalPosition: {x: 0.43, y: -1.2949998, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4096301159137992}
@@ -114,9 +116,9 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1.3
+  m_LinearDrag: 0.8
+  m_AngularDrag: 0.5
+  m_GravityScale: 1.8
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -134,7 +136,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.037320137, y: 0}
+  m_Offset: {x: 0.07751846, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -145,8 +147,25 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.5647907, y: 2.56}
+  m_Size: {x: 1.2943668, y: 2.3992076}
   m_EdgeRadius: 0
+--- !u!95 &95931163527726100
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1664639773564260}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 22c9847f259048a40b7a1e99ca815ec0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114027990420572578
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -158,10 +177,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a96c8a6478edc044a8659ff5ccc45e1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerSpeed: 0.1
-  jumpForce: 500
+  playerSpeed: 5
+  jumpForce: 700
   facingRight: 1
-  groundChecker: {fileID: 1976039493202640}
+  isGrounded: 1
+  groundCheckerLeft: {fileID: 1976039493202640}
+  groundCheckerRight: {fileID: 1293276721770208}
 --- !u!114 &114476693361408440
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -173,6 +194,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62fda4289baee154a925ef5c12e75d6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  groundCheckerLeft: {fileID: 1976039493202640}
+  groundCheckerRight: {fileID: 1293276721770208}
+--- !u!114 &114813047603421910
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1664639773564260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a865dddf63b4274dabc840f48e6f765, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  invincibleAlpha: 0.3
+  invinciblePeriod: 2
+  respawnLocation: {fileID: 0}
 --- !u!212 &212035911058092502
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -207,7 +244,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 8c84b031e36aa04459188c30f4746b26, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e021706fd827aad4ba2ec7ddaa4adafe, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

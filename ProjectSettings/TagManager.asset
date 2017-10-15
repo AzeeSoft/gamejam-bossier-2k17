@@ -16,6 +16,7 @@ TagManager:
   - CrowCrushDetector
   - Ground
   - MainSceneManager
+  - RockPit
   layers:
   - Default
   - TransparentFX
@@ -25,8 +26,8 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
+  - Ground
+  - Enemy
   - 
   - 
   - 

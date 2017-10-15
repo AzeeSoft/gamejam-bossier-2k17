@@ -11,6 +11,21 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 1431608035498146}
   m_IsPrefabParent: 1
+--- !u!1 &1299218589658456
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4684178163880734}
+  m_Layer: 0
+  m_Name: WallDetector
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1326818086829018
 GameObject:
   m_ObjectHideFlags: 0
@@ -42,7 +57,7 @@ GameObject:
   - component: {fileID: 95464017251883892}
   - component: {fileID: 114233926635634734}
   - component: {fileID: 114756206626632816}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: RoboSnake
   m_TagString: RoboSnake
   m_Icon: {fileID: 0}
@@ -71,11 +86,12 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1431608035498146}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9, y: -1.77, z: 0}
+  m_LocalPosition: {x: -13.79, y: -1.77, z: 0}
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children:
   - {fileID: 4680253022163696}
   - {fileID: 4602742384154856}
+  - {fileID: 4684178163880734}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -104,6 +120,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4232559059063232}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4684178163880734
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1299218589658456}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.19, y: -1.06, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4232559059063232}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &50461967745271272
 Rigidbody2D:
@@ -137,7 +166,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.31906986, y: -0.11741388}
+  m_Offset: {x: -0.24151707, y: -0.11741388}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -148,7 +177,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.6498661, y: 2.3251722}
+  m_Size: {x: 1.8049717, y: 2.3251722}
   m_EdgeRadius: 0
 --- !u!61 &61630843356143162
 BoxCollider2D:
@@ -162,7 +191,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.27467108, y: -0.1467675}
+  m_Offset: {x: 0.1518054, y: -0.1467675}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -173,7 +202,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.2362375, y: 0.18462634}
+  m_Size: {x: 1.4819689, y: 0.18462634}
   m_EdgeRadius: 0
 --- !u!95 &95464017251883892
 Animator:
@@ -217,7 +246,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d350b9af3a00a084e9a40a4dd5a519a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: -0.07
+  speed: -3.5
+  wallDetectorTransform: {fileID: 4684178163880734}
+  isFacingLeft: 0
 --- !u!114 &114756206626632816
 MonoBehaviour:
   m_ObjectHideFlags: 1

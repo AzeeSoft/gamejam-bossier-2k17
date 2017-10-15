@@ -15,14 +15,14 @@ public class AligatorController : MonoBehaviour
     void Update()
     {
     }
-
+/*
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("bounder"))
         {
             Destroy(gameObject);
         }
-    }
+    }*/
 
     public void die()
     {

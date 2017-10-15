@@ -9,7 +9,8 @@ public class CameraMovement : MonoBehaviour
 
     GameObject pecky;
     Camera camera;
-    float initOffset;
+    float initOffsetX;
+    float initOffsetY;
 
 
     // Use this for initialization
@@ -19,7 +20,8 @@ public class CameraMovement : MonoBehaviour
         camera = GetComponent<Camera>();
 
         alignWithPlayer();
-        initOffset = transform.position.x - pecky.transform.position.x;
+        initOffsetX = transform.position.x - pecky.transform.position.x;
+        initOffsetY = transform.position.y - pecky.transform.position.y;
     }
 
     // Update is called once per frame
@@ -33,8 +35,13 @@ public class CameraMovement : MonoBehaviour
         if (pecky != null)
         {
             Vector3 pos = transform.position;
-            pos.x = pecky.transform.position.x + initOffset;
-            transform.position = pos;
+            pos.x = pecky.transform.position.x + initOffsetX;
+            PeckyMovement peckyMovement = pecky.GetComponent<PeckyMovement>();
+            if (peckyMovement.isGrounded)
+            {
+                pos.y = pecky.transform.position.y + initOffsetY;
+            }
+            transform.position = Vector3.Lerp(transform.position, pos, Time.deltaTime*2);
         }
     }
 

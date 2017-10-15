@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
 /// <summary>
 /// Common methods used in different places in the game.
@@ -64,5 +66,20 @@ class StaticTools
     public static long GetCurrentTimeMillis()
     {
         return (long)(Time.time*1000);
+    }
+
+    public static IEnumerator NotifyCollectible(GameObject instance, int maxDistance)
+    {
+        float initY = instance.transform.position.y;
+        float stepDist = 0.1f;
+        float stepTime = 0.01f;
+        while (instance.transform.position.y < initY + maxDistance)
+        {
+            Vector3 pos = instance.transform.position;
+            pos.y += stepDist;
+            instance.transform.position = pos;
+            yield return new WaitForSeconds(stepTime);
+        }
+        Object.Destroy(instance);
     }
 }

@@ -11,6 +11,21 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 1814832011161104}
   m_IsPrefabParent: 1
+--- !u!1 &1177261548598370
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4681007027023396}
+  m_Layer: 0
+  m_Name: WallDetector
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1288871681815676
 GameObject:
   m_ObjectHideFlags: 0
@@ -63,6 +78,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!4 &4681007027023396
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1177261548598370}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.262, y: -0.002, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4999749096910134}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4885627518179350
 Transform:
   m_ObjectHideFlags: 1
@@ -96,11 +124,12 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1814832011161104}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.61, y: 3.09, z: 0}
+  m_LocalPosition: {x: -4.37, y: 1.38, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children:
   - {fileID: 4908919177535376}
   - {fileID: 4885627518179350}
+  - {fileID: 4681007027023396}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -111,7 +140,7 @@ Rigidbody2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1814832011161104}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -123,7 +152,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 4
+  m_Constraints: 6
 --- !u!61 &61098439753763088
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -136,7 +165,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.009311199, y: -0.1467675}
+  m_Offset: {x: 0.016388416, y: -0.1467675}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -147,7 +176,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.9774351, y: 0.18462634}
+  m_Size: {x: 1.2750082, y: 0.18462634}
   m_EdgeRadius: 0
 --- !u!61 &61982123156971668
 BoxCollider2D:
@@ -199,6 +228,7 @@ MonoBehaviour:
   eggSpawner: {fileID: 4908919177535376}
   eggPrefab: {fileID: 1883387545557944, guid: 7ddbbf32f4a227c40a9a88bee0bcc4a9, type: 2}
   eggDropInterval: 3
+  points: 15
 --- !u!114 &114707324158667420
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -210,7 +240,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67ef27f8e16ff3f4d82e0603366d92a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: -0.12
+  speed: -6
+  wallDetectorTransform: {fileID: 4681007027023396}
+  isFacingLeft: 1
 --- !u!212 &212237194530005112
 SpriteRenderer:
   m_ObjectHideFlags: 1

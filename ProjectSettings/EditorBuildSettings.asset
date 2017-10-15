@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/RomCheckIntro.unity
+    guid: 0635af0ee3e14484b8366181de2d2dcd
+  - enabled: 1
     path: Assets/Scenes/Splash.unity
     guid: 535ee7486fa72b548a89c8a23b7e5e5e
   - enabled: 1

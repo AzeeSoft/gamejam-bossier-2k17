@@ -9,19 +9,21 @@ public class RoboSnakeAttack : MonoBehaviour
     public float spitInterval;
 
     Animator animator;
+    RoboSnakeMovement roboSnakeMovement;
 
     // Use this for initialization
-    void Start ()
+    void Start()
     {
         animator = GetComponent<Animator>();
+        roboSnakeMovement = GetComponent<RoboSnakeMovement>();
 
         startFiring();
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+    }
 
     void startFiring()
     {
@@ -30,7 +32,7 @@ public class RoboSnakeAttack : MonoBehaviour
 
     IEnumerator fireCoroutine()
     {
-        while (gameObject!=null)
+        while (gameObject != null)
         {
             fire();
             yield return new WaitForSeconds(spitInterval);
@@ -40,7 +42,10 @@ public class RoboSnakeAttack : MonoBehaviour
     void fire()
     {
         animator.SetTrigger("isAttacking");
-        GameObject.Instantiate(venom, spitterTransform.position, spitterTransform.rotation);
+        GameObject venomInstance = GameObject.Instantiate(venom, spitterTransform.position, spitterTransform.rotation);
+        VenomMovement venomMovement = venomInstance.GetComponent<VenomMovement>();
+        if(roboSnakeMovement.isFacingLeft)
+            venomMovement.speed *= -1;
     }
 
     void OnCollisionEnter2D(Collision2D collision)
