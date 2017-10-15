@@ -5,6 +5,7 @@ using UnityEngine;
 public class ChestController : MonoBehaviour
 {
     public Sprite openChestSprite;
+    public GameObject lifePrefab;
 
     [HideInInspector]
     public bool isOpen = false;
@@ -26,9 +27,23 @@ public class ChestController : MonoBehaviour
     {
         if (!isOpen)
         {
+            revealItem();
             spriteRenderer.sprite = openChestSprite;
             isOpen = true;
             Debug.Log("Opening Chest...");
         }
+    }
+
+    private void revealItem()
+    {
+        GameObject item;
+
+        //For now, juz +1 Life
+        MainSceneManager mainSceneManager = MainSceneManager.getMainSceneManager();
+        mainSceneManager.addLife();
+        item = GameObject.Instantiate(lifePrefab, transform.position, transform.rotation);
+
+
+        StartCoroutine(StaticTools.NotifyCollectible(item, 10));
     }
 }

@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 212096112152670958}
   - component: {fileID: 50716410221466764}
   - component: {fileID: 61643842480090460}
+  - component: {fileID: 114186141888522664}
   m_Layer: 0
   m_Name: Chest
   m_TagString: chest
@@ -36,7 +37,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1337120030247600}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -2.432, z: 0.1}
+  m_LocalPosition: {x: 1.19, y: 1.28, z: 0.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -87,6 +88,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.1528542, y: 1.1184255}
   m_EdgeRadius: 0
+--- !u!114 &114186141888522664
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1337120030247600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 658cc8682016aef4282893dd41103734, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  openChestSprite: {fileID: 21300000, guid: 8c5163615d8ef234dbf187ec32f4772d, type: 3}
+  lifePrefab: {fileID: 1755346825419072, guid: 00020df7365768140bc797d13931089e, type: 2}
+  isOpen: 0
 --- !u!212 &212096112152670958
 SpriteRenderer:
   m_ObjectHideFlags: 1

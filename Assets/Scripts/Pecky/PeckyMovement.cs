@@ -72,7 +72,7 @@ public class PeckyMovement : MonoBehaviour
         }
 
         Vector3 pos = transform.position;
-        pos.x += x*playerSpeed;
+        pos.x += x*playerSpeed*Time.deltaTime;
         transform.position = pos;
     }
 

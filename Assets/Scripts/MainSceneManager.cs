@@ -1,15 +1,24 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class MainSceneManager : MonoBehaviour
 {
     public Text scoreText;
     public Text livesText;
+    public GameObject scoreNotification;
+
+    public GameObject pauseMenuLayout;
+    public GameObject gameOverLayout;
+    public Text gameOverScoreText;
+
+    public int maxLives ;
 
     int currentScore = 0;
-    int playerLives = 3;
+    int playerLives = 1;
 
     bool paused = false;
 
@@ -40,18 +49,56 @@ public class MainSceneManager : MonoBehaviour
 
     void checkForPause()
     {
+        if (Input.GetButtonDown("Cancel"))
+        {
+            if (!pauseMenuLayout.activeSelf)
+            {
+                showPauseMenu();
+            }
+            else
+            {
+                hidePauseMenu();
+            }
+        }
     }
 
     public void addCurrentScore(int a)
     {
         currentScore += a;
+        GameObject pecky = GameObject.FindGameObjectWithTag("pecky");
+
+        GameObject scoreNotif = GameObject.Instantiate(scoreNotification, pecky.transform.position, pecky.transform.rotation);
+        TextMesh textmesh = scoreNotif.GetComponent<TextMesh>();
+        textmesh.text = a.ToString();
+
+        StartCoroutine(StaticTools.NotifyCollectible(scoreNotif, 10));
         updateCurrentScore();
     }
 
-    public void loseLife()
+    public void addLife()
+    {
+        if (playerLives < maxLives)
+        {
+            playerLives++;
+            updateLives();
+        }
+    }
+
+    public bool loseLife()
     {
         playerLives--;
-        updateLives();
+        if (playerLives > 0)
+        {
+            updateLives();
+            return true;
+        }
+        else
+        {
+            Time.timeScale = 0;
+            gameOverScoreText.text = "Your Score: " + currentScore;
+            gameOverLayout.SetActive(true);
+            return false;
+        }
     }
 
     public void updateCurrentScore()
@@ -63,5 +110,30 @@ public class MainSceneManager : MonoBehaviour
     public void updateLives()
     {
         livesText.text = "   X   " + playerLives;
+    }
+
+    public void reloadScene()
+    {
+        Debug.Log("Restart..");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
+        Time.timeScale = 1;
+    }
+
+    public void goToMainMenu()
+    {
+        SceneManager.LoadScene("Title", LoadSceneMode.Single);
+        Time.timeScale = 1;
+    }
+
+    public void showPauseMenu()
+    {
+        Time.timeScale = 0;
+        pauseMenuLayout.SetActive(true);
+    }
+
+    public void hidePauseMenu()
+    {
+        pauseMenuLayout.SetActive(false);
+        Time.timeScale = 1;
     }
 }

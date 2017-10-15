@@ -25,7 +25,7 @@ public class RoboSnakeMovement : MonoBehaviour
     void updateMovement()
     {
         Vector2 pos = transform.position;
-        pos.x += speed;
+        pos.x += speed * Time.deltaTime;
         transform.position = pos;
 
         animator.SetBool("isWalking", true);

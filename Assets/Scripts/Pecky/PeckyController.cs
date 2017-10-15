@@ -2,20 +2,71 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PeckyController : MonoBehaviour {
+public class PeckyController : MonoBehaviour
+{
+    public float invincibleAlpha;
+    public int invinciblePeriod;
+    public Transform respawnLocation;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    SpriteRenderer spriteRenderer;
+
+    bool canDie = true;
+
+    // Use this for initialization
+    void Start()
+    {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+    }
 
     public void die()
     {
-        Destroy(gameObject);
+        if (!canDie)
+            return;
+
+        MainSceneManager mainSceneManager = MainSceneManager.getMainSceneManager();
+        if (mainSceneManager.loseLife())
+        {
+            Vector3 pos = transform.position;
+            pos.y = 5;
+            transform.position = pos;
+
+            StartCoroutine(makeInvincibleTemp());
+        }
+//        Destroy(gameObject);
+    }
+
+    IEnumerator makeInvincibleTemp()
+    {
+        Color color = spriteRenderer.color;
+        color.a = invincibleAlpha;
+        spriteRenderer.color = color;
+
+        BoxCollider2D boxCollider2D = GetComponent<BoxCollider2D>();
+        boxCollider2D.enabled = false;
+
+        Rigidbody2D rb2d = GetComponent<Rigidbody2D>();
+        rb2d.isKinematic = true;
+
+        PeckyMovement peckyMovement = GetComponent<PeckyMovement>();
+        float origSpeed = peckyMovement.playerSpeed;
+        peckyMovement.playerSpeed /= 2;
+
+        canDie = false;
+
+        yield return new WaitForSeconds(invinciblePeriod);
+
+        color.a = 255;
+        spriteRenderer.color = color;
+        boxCollider2D.enabled = true;
+        rb2d.isKinematic = false;
+
+        peckyMovement.playerSpeed = origSpeed;
+
+        canDie = true;
     }
 }
