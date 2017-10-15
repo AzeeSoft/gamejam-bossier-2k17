@@ -436,7 +436,7 @@ RectTransform:
   m_GameObject: {fileID: 606608172}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 90}
-  m_LocalScale: {x: 0.015797788, y: 0.015797788, z: 0.015797788}
+  m_LocalScale: {x: 0.01904762, y: 0.01904762, z: 0.01904762}
   m_Children:
   - {fileID: 225640946}
   - {fileID: 1768326795}
@@ -490,12 +490,12 @@ Prefab:
     - target: {fileID: 224221275358212486, guid: 054787a15708a754c8fd2836916d887a,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: -330.1
+      value: -174.35
       objectReference: {fileID: 0}
     - target: {fileID: 224221275358212486, guid: 054787a15708a754c8fd2836916d887a,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: -86.5
+      value: 14.940002
       objectReference: {fileID: 0}
     - target: {fileID: 224221275358212486, guid: 054787a15708a754c8fd2836916d887a,
         type: 2}
@@ -530,12 +530,12 @@ Prefab:
     - target: {fileID: 224221275358212486, guid: 054787a15708a754c8fd2836916d887a,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 147.9
+      value: 283.65
       objectReference: {fileID: 0}
     - target: {fileID: 224221275358212486, guid: 054787a15708a754c8fd2836916d887a,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 230
+      value: 277.44
       objectReference: {fileID: 0}
     - target: {fileID: 224221275358212486, guid: 054787a15708a754c8fd2836916d887a,
         type: 2}
@@ -684,7 +684,7 @@ MonoBehaviour:
   shader: {fileID: 4800000, guid: 739c6569a1eb0c448804a9e0e49f34b1, type: 3}
   VideoMode: 4
   DisplaySizeX: 640
-  DisplaySizeY: 350
+  DisplaySizeY: 480
   StretchToDisplay: 1
   AspectRatio: 1.33
   EnableTVCurvature: 1
@@ -784,7 +784,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 804007988}
   m_GameObject: {fileID: 1441631747}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -330.1, y: -86.5, z: 0}
+  m_LocalPosition: {x: -174.35, y: 14.940002, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 606608176}
@@ -792,7 +792,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 147.9, y: 230}
+  m_AnchoredPosition: {x: 283.65, y: 277.44}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1711238291
@@ -819,7 +819,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1711238291}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -358, y: 196.5, z: 0}
+  m_LocalPosition: {x: -338, y: 142.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 606608176}
@@ -887,7 +887,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1768326794}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -160.6, y: 196.5, z: 0}
+  m_LocalPosition: {x: -140.6, y: 142.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 606608176}
@@ -932,7 +932,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'P C - 8   S Y S T E M
 
-    By   T H R E E   C O R P'
+    By   A T M    C o r p'
 --- !u!222 &1768326797
 CanvasRenderer:
   m_ObjectHideFlags: 0

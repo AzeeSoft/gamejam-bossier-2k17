@@ -76,6 +76,7 @@ public class PeckyAttack : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collision)
     {
         MainSceneManager mainSceneManager = MainSceneManager.getMainSceneManager();
+        AudioSource audioSource = GetComponent<AudioSource>();
         if (collision.gameObject.tag.Equals("chest"))
         {
             overlappingAttackableObject = collision.gameObject;
@@ -86,6 +87,7 @@ public class PeckyAttack : MonoBehaviour
                 collision.gameObject.transform.GetComponentInParent<RoboSnakeController>();
             roboSnakeController.die();
             mainSceneManager.addCurrentScore(roboSnakeController.points);
+            audioSource.Play();
         }
         else if (collision.gameObject.CompareTag("AligatorCrushDetector"))
         {
@@ -93,6 +95,7 @@ public class PeckyAttack : MonoBehaviour
                 collision.gameObject.transform.GetComponentInParent<AligatorController>();
             aligatorController.die();
             mainSceneManager.addCurrentScore(aligatorController.points);
+            audioSource.Play();
         }
         else if (collision.gameObject.CompareTag("CrowCrushDetector"))
         {
@@ -100,6 +103,7 @@ public class PeckyAttack : MonoBehaviour
                 collision.gameObject.transform.GetComponentInParent<CrowController>();
             crowController.die();
             mainSceneManager.addCurrentScore(crowController.points);
+            audioSource.Play();
         }
     }
 

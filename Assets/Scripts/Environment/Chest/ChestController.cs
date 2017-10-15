@@ -43,6 +43,8 @@ public class ChestController : MonoBehaviour
         if (mainSceneManager.addLife())
         {
             item = GameObject.Instantiate(lifePrefab, transform.position, transform.rotation);
+            AudioSource audioSource = GetComponent<AudioSource>();
+            audioSource.Play();
         }
 
         if (item != null)
