@@ -1,9 +1,21 @@
 # gamejam-bossier-2k17
 
-## Credits
-### Programming:
-MacKenzy Green
+# Pecky The Woodpecker
 
-"Azee"
+## Credits
+### Lead Programmer:
+Aziztitu "Azee" Murugan
+
+### Assistant Programmer
+Mackenzy Green
+
 ### Art:
 Trenton "BentLent" Robichaux
+
+### Music:
+Pixelland by Kevin Macleod
+
+Cyborg Ninja by Kevin Macleod
+
+### Fonts:
+Arcade Classic by Jakob
